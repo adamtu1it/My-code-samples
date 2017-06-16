@@ -12,7 +12,7 @@ the directories for the input and output folders can be found in the app.config 
 
 easily maintainable and extendable and reusable 
 
-read more about the problem description and maze represantion in the MazeProblemDescription.txt
+read more about the problem description and maze representation in the MazeProblemDescription.txt
 
 Note:
 one of the input maze is very large, in order to see the result don't forget to turn off the wordwrap to see the wide maze and be able to track the path from source to destionation
