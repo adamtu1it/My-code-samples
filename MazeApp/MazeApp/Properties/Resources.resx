@@ -123,4 +123,10 @@
   <data name="NoSolution" xml:space="preserve">
     <value>No solution has been found.</value>
   </data>
+  <data name="Plain" xml:space="preserve">
+    <value>Maze without solution</value>
+  </data>
+  <data name="Solution" xml:space="preserve">
+    <value>Maze with solution </value>
+  </data>
 </root>

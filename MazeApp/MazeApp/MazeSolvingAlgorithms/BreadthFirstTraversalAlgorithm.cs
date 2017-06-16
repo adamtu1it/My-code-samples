@@ -6,7 +6,7 @@ namespace MazeApp.MazeSolvingAlgorithms
 {
     public class BreadthFirstTraversalAlgorithm : IMazeSolvingAlgorithm
     {
-        public IEnumerable<Cell> Solve(Maze maze)
+        public void Solve(Maze maze)
         {
             if (maze == null) throw new ArgumentNullException("maze");
             if (!MazeValidator.IsMazeValid(maze)) throw new InvalidMazeInputException();
@@ -63,7 +63,10 @@ namespace MazeApp.MazeSolvingAlgorithms
 
             // if 'end' cell remained unvisited, then there is no path found from 'start' to 'end'
             if (levelMatrix[end.Row, end.Col] == 0)
-                return new List<Cell>();
+            {
+                maze.Solution = new List<Cell>();
+                return;
+            }
 
             // use stack because it will give a reverse order such as the last in will be the first element of the list
             var path = new Stack<Cell>();
@@ -94,7 +97,7 @@ namespace MazeApp.MazeSolvingAlgorithms
                 }
             }
 
-            return path;
+            maze.Solution = path;
         }
     }
 }

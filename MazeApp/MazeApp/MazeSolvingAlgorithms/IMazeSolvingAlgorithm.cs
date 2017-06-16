@@ -4,6 +4,6 @@ namespace MazeApp.MazeSolvingAlgorithms
 {
     public interface IMazeSolvingAlgorithm
     {
-        IEnumerable<Cell> Solve(Maze maze);
+        void Solve(Maze maze);
     }
 }

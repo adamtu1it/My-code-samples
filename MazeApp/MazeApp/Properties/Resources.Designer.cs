@@ -77,5 +77,23 @@ namespace MazeApp.Properties {
                 return ResourceManager.GetString("NoSolution", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maze without solution.
+        /// </summary>
+        internal static string Plain {
+            get {
+                return ResourceManager.GetString("Plain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maze with solution .
+        /// </summary>
+        internal static string Solution {
+            get {
+                return ResourceManager.GetString("Solution", resourceCulture);
+            }
+        }
     }
 }

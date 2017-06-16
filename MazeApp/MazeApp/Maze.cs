@@ -27,20 +27,21 @@ namespace MazeApp
             get { return (bool[,]) _mazeMatrix.Clone(); }
         }
 
-        public IEnumerable<Cell> Solution { get; private set; }
+        public IEnumerable<Cell> Solution { get; internal set; }
 
         // store the reference because we could call more than once the same presenter on the same maze e.g. before and after it has been solved by different algorithms
         public IMyWriter Writer { get; set; }
 
         // online, the reference is not stored since we call only once the same maze with the same algorithm
+        // this method works like the Visitor design pattern but dedicated for only IMazeSolvingAlgorithms
         public void Solve(IMazeSolvingAlgorithm mazeSolvingAlgorithm)
         {
-            if (mazeSolvingAlgorithm != null) Solution = mazeSolvingAlgorithm.Solve(this);
+            if (mazeSolvingAlgorithm != null) mazeSolvingAlgorithm.Solve(this);
         }
 
         public void Write(bool withSolution)
         {
-            Writer.StartNewWrite(withSolution ? "solution" : "plain");
+            Writer.StartNewWrite(withSolution ? Resources.Solution : Resources.Plain);
 
             if (withSolution && !Solution.Any()) Writer.WriteLine(Resources.NoSolution);
 
